@@ -39,7 +39,8 @@ namespace Esibayeni.Controllers
         // GET: LivesStocks/Create
         public ActionResult Create()
         {
-            ViewBag.BatchID = new SelectList(db.Batches, "ID", "ID");
+            ViewBag.BatchID = new SelectList(db.Batches, "ID", "BatchNo");
+            //            ViewBag.BatchID = new SelectList(db.Batches, "ID", "ID");
             ViewBag.CategoryId = new SelectList(db.Categories, "CategoryId", "CategoryType");
             return View();
         }
@@ -58,7 +59,8 @@ namespace Esibayeni.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.BatchID = new SelectList(db.Batches, "ID", "ID", livesStock.BatchID);
+            //            ViewBag.BatchID = new SelectList(db.Batches, "ID", "ID", livesStock.BatchID);
+            ViewBag.BatchID = new SelectList(db.Batches, "ID", "BatchNo", livesStock.BatchID);
             ViewBag.CategoryId = new SelectList(db.Categories, "CategoryId", "CategoryType", livesStock.CategoryId);
             return View(livesStock);
         }
@@ -76,6 +78,7 @@ namespace Esibayeni.Controllers
                 return HttpNotFound();
             }
             ViewBag.BatchID = new SelectList(db.Batches, "ID", "ID", livesStock.BatchID);
+
             ViewBag.CategoryId = new SelectList(db.Categories, "CategoryId", "CategoryType", livesStock.CategoryId);
             return View(livesStock);
         }

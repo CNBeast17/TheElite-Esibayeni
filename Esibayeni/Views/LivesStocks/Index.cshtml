@@ -12,7 +12,7 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Batch.ID)
+            @Html.DisplayNameFor(model => model.Batch.BatchNo)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Category.CategoryType)
@@ -38,7 +38,7 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Batch.ID)
+            @Html.DisplayFor(modelItem => item.Batch.BatchNo)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Category.CategoryType)
