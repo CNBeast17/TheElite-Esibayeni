@@ -55,7 +55,7 @@ namespace Esibayeni.Controllers
             {
                 db.Batches.Add(batch);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Create","LivesStocks",batch);
             }
 
             ViewBag.CategoryID = new SelectList(db.Categories, "CategoryId", "CategoryType", batch.CategoryID);
