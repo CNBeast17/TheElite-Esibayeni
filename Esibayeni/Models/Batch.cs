@@ -35,5 +35,11 @@ namespace Esibayeni.Models
 
         }
 
+        public DateTime DateNow()
+        {
+            return DateTime.Now;
+        }
+
+
     }
 }

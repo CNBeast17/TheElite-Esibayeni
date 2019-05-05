@@ -39,10 +39,14 @@ namespace Esibayeni.Controllers
         // GET: LivesStocks/Create
         public ActionResult Create(Batch batch)
         {
-           // ViewBag.BatchID = new SelectList(db.Batches, "ID", "BatchNo");
+
             ViewBag.CategoryId = new SelectList(db.Categories, "CategoryId", "CategoryType");
             LivesStock livestock = new LivesStock();
             livestock.BatchID = batch.ID;
+            if(batch == null)
+            {
+                livestock.BatchID = null;
+            }
             return View(livestock);
         }
 
@@ -64,13 +68,10 @@ namespace Esibayeni.Controllers
                 if (livesStock.BatchID != null)
                     if (db.Batches.Find(livesStock.BatchID).Quantity > 0)
                 {
-                    return RedirectToAction("Create",db.Batches.Find(livesStock.ID));
+                    return RedirectToAction("Create",db.Batches.Find(livesStock.BatchID));
                 }
                 return RedirectToAction("Index");
             }
-
-            //            ViewBag.BatchID = new SelectList(db.Batches, "ID", "ID", livesStock.BatchID);
-            ViewBag.BatchID = new SelectList(db.Batches, "ID", "BatchNo", livesStock.BatchID);
             ViewBag.CategoryId = new SelectList(db.Categories, "CategoryId", "CategoryType", livesStock.CategoryId);
             return View(livesStock);
         }

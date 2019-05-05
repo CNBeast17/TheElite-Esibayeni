@@ -53,6 +53,7 @@ namespace Esibayeni.Controllers
         {
             if (ModelState.IsValid)
             {
+                batch.Date = batch.DateNow();
                 db.Batches.Add(batch);
                 db.SaveChanges();
                 return RedirectToAction("Create","LivesStocks",batch);
