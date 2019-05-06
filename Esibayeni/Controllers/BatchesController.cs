@@ -100,23 +100,23 @@ namespace Esibayeni.Controllers
         }
 
         // GET: Batches/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Batch batch = db.Batches.Find(id);
-            if (batch == null)
-            {
-                return HttpNotFound();
-            }
-            return View(batch);
-        }
+        //public ActionResult Delete(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        //    }
+        //    Batch batch = db.Batches.Find(id);
+        //    if (batch == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    return View(batch);
+        //}
 
         // POST: Batches/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
+        [ActionName("Delete")]
+        //[ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
             Batch batch = db.Batches.Find(id);

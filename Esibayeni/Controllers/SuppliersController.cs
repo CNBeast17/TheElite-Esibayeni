@@ -90,23 +90,23 @@ namespace Esibayeni.Controllers
         }
 
         // GET: Suppliers/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Supplier supplier = db.Suppliers.Find(id);
-            if (supplier == null)
-            {
-                return HttpNotFound();
-            }
-            return View(supplier);
-        }
+        //public ActionResult Delete(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        //    }
+        //    Supplier supplier = db.Suppliers.Find(id);
+        //    if (supplier == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    return View(supplier);
+        //}
 
         // POST: Suppliers/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
+        [ActionName("Delete")]
+        //[ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
             Supplier supplier = db.Suppliers.Find(id);

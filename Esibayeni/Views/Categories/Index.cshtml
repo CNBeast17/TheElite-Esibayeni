@@ -23,9 +23,12 @@
             @Html.DisplayFor(modelItem => item.CategoryType)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.CategoryId }) |
+            <a class="btn btn-warning" href="/Categories/Edit/@item.CategoryId">Edit<span class="glyphicon glyphicon-edit"></span></a>
+            @*<a class="btn btn-info" href="/Categories/Details/@item.CategoryId">Details<span class="glyphicon glyphicon-exclamation-sign"></span></a>*@
+            <a class="btn btn-danger" href="/Categories/Delete/@item.CategoryId">Delete<span class="glyphicon glyphicon-trash"></span></a>
+            @*@Html.ActionLink("Edit", "Edit", new { id=item.CategoryId }) |
             @Html.ActionLink("Details", "Details", new { id=item.CategoryId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.CategoryId })
+            @Html.ActionLink("Delete", "Delete", new { id=item.CategoryId })*@
         </td>
     </tr>
 }

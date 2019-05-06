@@ -113,23 +113,22 @@ namespace Esibayeni.Controllers
         }
 
         // GET: LivesStocks/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            LivesStock livesStock = db.LivesStocks.Find(id);
-            if (livesStock == null)
-            {
-                return HttpNotFound();
-            }
-            return View(livesStock);
-        }
+        //public ActionResult Delete(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        //    }
+        //    LivesStock livesStock = db.LivesStocks.Find(id);
+        //    if (livesStock == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    return View(livesStock);
+        //}
 
-        // POST: LivesStocks/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
+        //// POST: LivesStocks/Delete/5
+        [ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {
             LivesStock livesStock = db.LivesStocks.Find(id);

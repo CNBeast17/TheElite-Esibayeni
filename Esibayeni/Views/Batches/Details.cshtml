@@ -61,6 +61,8 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    <a class="btn btn-warning" href="/Batches/Edit/@Model.ID">Edit<span class="glyphicon glyphicon-edit"></span></a>
+    <a class="btn btn-danger" href="/Batches/Delete/@Model.ID">Delete<span class="glyphicon glyphicon-trash"></span></a>
+    @*@Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |*@
     @Html.ActionLink("Back to List", "Index")
 </p>

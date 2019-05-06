@@ -9,7 +9,7 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
+<table class="table table-striped table-bordered table-hover">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Batch.BatchNo)
@@ -59,9 +59,11 @@
             @Html.DisplayFor(modelItem => item.CostPrice)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            <a class="btn btn-info" href="/LivesStocks/Details/@item.ID">Details<span class="glyphicon glyphicon-exclamation-sign"></span></a>
+
+            @*@Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
             @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })*@
         </td>
     </tr>
 }
